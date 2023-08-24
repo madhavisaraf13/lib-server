@@ -1,50 +1,3 @@
-// const express = require("express");
-// const mongoose = require("mongoose");
-// const cors = require("cors");
-// const app = express();
-// const booksModel = require("./models/BooksDB");
-
-// app.use(express.json());
-// app.use(cors());
-
-
-// mongoose.connect("mongodb+srv://madhavi:iwonttell@cluster0.jy6q1m7.mongodb.net/booksDB?retryWrites=true&w=majority",{useNewUrlParser:true});
-
-// app.post("/insert",async(req,res) => {
-//     console.log("hello");
-//     const bookId = req.body.bookId;
-//     const bookName = req.body.bookName;
-//     const author = req.body.author;
-//     const publisher = req.body.publisher;
-//     const editor = req.body.editor;
-//     const language = req.body.language;
-//     const numCopies = req.body.numCopies;
-
-//     console.log(bookName);
-//     console.log(author);
-
-//     const book = new booksModel({bookId:bookId,bookName:bookName,author:author,publisher:publisher,editor:editor,language:language,numCopies:numCopies});
-//     try{
-//         await book.save();
-//         res.send("inserted data");
-
-//     }catch(err){
-//         console.log(err);
-//     }
-// });
-
-// app.get("/getbooks",async(req,res) => {
-//    console.log("INRAED");
-//     booksModel.find({})
-//     .then(booklist=> res.json(booklist))
-//     .catch(err=>res.json(err));
-// })
-
-// app.listen(3001, ()=>{
-//     console.log("server running on port 3001 ... ")
-// });     
-
-
 import express from 'express';
 import cors from 'cors';
 import session from "express-session";
@@ -55,7 +8,7 @@ app.use(express.json());
 app.use(
     cors({
      // origin: 'https://a5--famous-kheer-8b1fff.netlify.app'
-     origin: 'http://localhost:3000'
+     origin: process.env.FRONTEND_URL
     })
    );
    const sessionOptions = {
