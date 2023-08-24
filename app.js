@@ -5,10 +5,10 @@ import mysql from 'mysql2';
 
 const app = express();
 app.use(express.json());
-app.use(
+app.use(  
     cors({
      // origin: 'https://a5--famous-kheer-8b1fff.netlify.app'
-     origin: process.env.FRONTEND_URL
+     origin: 'https://majestic-faun-06d727.netlify.app'
     })
    );
    const sessionOptions = {
