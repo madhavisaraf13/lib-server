@@ -7,7 +7,6 @@ const app = express();
 app.use(express.json());
 app.use(  
     cors({
-     // origin: 'https://a5--famous-kheer-8b1fff.netlify.app'
      origin: 'https://majestic-faun-06d727.netlify.app'
     })
    );
