@@ -73,7 +73,7 @@ const bookRefNo = req.body.bookRefNo;
 const author = req.body.author;
 const publisher = req.body.publisher;
 const numPages = req.body.numPages;
-const language = req.body.language;
+const booklanguage = req.body.language;
 const volume = req.body.vol;
 const extraInfo = req.body.extraInfo;
 const keywords = req.body.keywords;
@@ -81,7 +81,7 @@ const imgLink = req.body.imgLink;
 
 
 var sql = `INSERT INTO booksinfo (bookId, bookName, bookRefNo, author, publisher, numPages, bookLanguage, vol, extraInfo, keywords, imgLink) VALUES (?,?,?,?,?,?,?,?,?,?,?)`;
-db.query(sql, [bookId,bookName,bookRefNo,author,publisher,numPages,language,volume,extraInfo,keywords,imgLink], function(err,result) {
+db.query(sql, [bookId,bookName,bookRefNo,author,publisher,numPages,booklanguage,volume,extraInfo,keywords,imgLink], function(err,result) {
   if(err) {
     console.log(err)
     } 
